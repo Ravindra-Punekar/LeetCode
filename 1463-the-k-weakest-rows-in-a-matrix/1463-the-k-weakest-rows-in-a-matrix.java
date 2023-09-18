@@ -11,6 +11,7 @@ class Solution {
             int soldiers = 0;
             for (int j = 0; j < m; j++) {
                 if (mat[i][j] == 1) soldiers++;
+                else break;
             }
             pq.add(new int[]{soldiers, i});
         }
