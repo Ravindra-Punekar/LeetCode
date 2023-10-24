@@ -1,14 +1,15 @@
 class Solution {
 public:
     int minimumSum(int n, int k) {
-        int sum=0;
-        unordered_set<int> s;
-        for(int i=1;s.size()<n;i++){
-            if(!s.count(k-i)){
-                s.insert(i);
-                sum+=i;
-            }
+        int mid=k/2;
+        if (n <= mid) {
+            return n*(n + 1)/2;
         }
+
+        int sum = mid*(mid+1)/2;
+        
+        int remNum = n - mid;
+        sum += remNum*(2*k + (remNum-1))/2;
         return sum;
     }
 };
