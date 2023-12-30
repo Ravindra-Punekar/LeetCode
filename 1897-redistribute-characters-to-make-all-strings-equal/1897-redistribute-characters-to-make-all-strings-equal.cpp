@@ -6,9 +6,10 @@ public:
         for(auto word:words)
             for(auto ch:word)
                 mp[ch]++;
-        
+
+        int n = words.size();
         for(auto it:mp) 
-            if(it.second % words.size()!= 0)
+            if(it.second % n!= 0)
                 return false;
         
         return true;
