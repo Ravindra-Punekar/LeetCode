@@ -14,7 +14,7 @@ class Solution {
 public:
     void dfs(TreeNode* root, vector<int>& v) {
         if (!root)  return;
-        
+
         if (!root->left && !root->right) {
             v.push_back(root->val);
             return;
@@ -27,14 +27,7 @@ public:
         vector<int> v1, v2;
         dfs(root1, v1);
         dfs(root2, v2);
-
-        if (v1.size() != v2.size())
-            return false;
-
-        for (int i = 0; i < v1.size(); i++)
-            if (v1[i] != v2[i])
-                return false;
-
-        return true;
+        
+        return (v1==v2) ? true: false;
     }
 };
